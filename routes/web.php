@@ -15,3 +15,5 @@ Route::get('/', 'Utama@index');
 Route::get('/login', 'Login@index');
 Route::post('/daftar', 'Login@Register');
 Route::post('/masuk', 'Login@Masuk');
+Route::get('/keluar', 'Login@Keluar');
+Route::post('/AddCart', 'Order@Order');
