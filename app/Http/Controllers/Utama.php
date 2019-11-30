@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\M_Barang;
 
+use DB;
+
 class Utama extends Controller
 {
     //
     public function index(){
-        return view('Utama');
+        $barang = DB::table('tbl_barang')->get();
+        return view('Utama',[ 'barang' => $barang ]);
     }
     public function store(Request $request){
         $this->validate($request,['file'=>'required|max:2048']);
